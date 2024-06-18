@@ -8,13 +8,7 @@ typora主题，基于[typora-default-themes](https://github.com/typora/typora-de
 
 ## 预览
 
-![图片风格](images/img.png)
-
-![代码风格](images/img2.png)
-
-![文字及列表风格](images/img3.png)
-
-![表格风格](images/img4.png)
+![MD主题演示.png](images/MD主题演示.png)
 
 ## 安装
 
