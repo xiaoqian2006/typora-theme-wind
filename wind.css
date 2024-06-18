@@ -120,7 +120,6 @@ pre {
 	background: white;
 }
 .md-fences{
-	margin-left: 1em;
 	padding-left: 1em;
 	border: 1px solid #ddd;
 	padding-bottom: 8px;
@@ -252,23 +251,31 @@ table tbody+tbody {
 	padding-bottom: 20px;
 }
 
+/*大纲展开和搜索显示*/
 .outline-expander:before {
 	color: inherit;
-	font-size: 14px;
+	font-size: 8px;
 	top: auto;
-	content: "\f0da";
-	font-family: var(--text-font) !important;
+	content: "\f125";
 }
 
-.outline-expander:hover:before,
+.outline-expander:hover:before {
+	content: "\f125";
+}
+
 .outline-item-open>.outline-item>.outline-expander:before {
-  	content: "\f0d7";
+  	content: "\f123";
 }
 
 /** source code mode */
 #typora-source {
 	font-family: var(--text-font) !important;
     color: #6A6A6A;
+}
+
+/*边栏*/
+#typora-sidebar {
+	font-size: 15px;
 }
 
 .html-for-mac #typora-sidebar {
@@ -324,4 +331,59 @@ iframe {
 
 .md-rawblock-on-edit>.md-rawblock-tooltip, .md-rawblock:hover>.md-rawblock-container, .md-rawblock:hover>.md-rawblock-tooltip {
 	background: inherit !important;
+}
+
+/*增加大纲序列号*/
+.sidebar-content {
+	counter-reset: h1
+}
+
+.outline-h1 {
+	counter-reset: h2
+}
+
+.outline-h2 {
+	counter-reset: h3
+}
+
+.outline-h3 {
+	counter-reset: h4
+}
+
+.outline-h4 {
+	counter-reset: h5
+}
+
+.outline-h5 {
+	counter-reset: h6
+}
+
+.outline-h1>.outline-item>.outline-label:before {
+	counter-increment: h1;
+	content: counter(h1) ". "
+}
+
+.outline-h2>.outline-item>.outline-label:before {
+	counter-increment: h2;
+	content: counter(h1) "." counter(h2) ". "
+}
+
+.outline-h3>.outline-item>.outline-label:before {
+	counter-increment: h3;
+	content: counter(h1) "." counter(h2) "." counter(h3) ". "
+}
+
+.outline-h4>.outline-item>.outline-label:before {
+	counter-increment: h4;
+	content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". "
+}
+
+.outline-h5>.outline-item>.outline-label:before {
+	counter-increment: h5;
+	content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "
+}
+
+.outline-h6>.outline-item>.outline-label:before {
+	counter-increment: h6;
+	content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "
 }
